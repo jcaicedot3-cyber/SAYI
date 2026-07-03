@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Sayi 💖</title>
+
+<style>
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(135deg,#ffd6e8,#fff5f8);
+    font-family:'Arial',sans-serif;
+    overflow:hidden;
+}
+
+.contenedor{
+    text-align:center;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    max-width:500px;
+}
+
+.flor{
+    font-size:90px;
+    animation:flotar 2s ease-in-out infinite;
+}
+
+@keyframes flotar{
+    50%{transform:translateY(-10px);}
+}
+
+h1{
+    color:#e91e63;
+}
+
+p{
+    color:#555;
+    font-size:18px;
+}
+
+.botones{
+    margin-top:25px;
+}
+
+button{
+    padding:12px 28px;
+    margin:10px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+}
+
+#si{
+    background:#ff4f93;
+    color:white;
+}
+
+#si:hover{
+    transform:scale(1.1);
+}
+
+#no{
+    background:#d9d9d9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+    <div class="flor">🌸</div>
+
+    <h1>Para ti, Sayi 💕</h1>
+
+    <p>
+        Feliz segundo día de tu mes. 🌷<br><br>
+        Quiero preguntarte algo muy especial...
+    </p>
+
+    <h2>¿Podemos ser amigas eternamente? 🩷</h2>
+
+    <div class="botones">
+        <button id="si">Sí 💖</button>
+        <button id="no">No 🙈</button>
+    </div>
+</div>
+
+<script>
+const no = document.getElementById("no");
+
+no.addEventListener("mouseover",()=>{
+    const x=Math.random()*(window.innerWidth-100);
+    const y=Math.random()*(window.innerHeight-60);
+
+    no.style.position="absolute";
+    no.style.left=x+"px";
+    no.style.top=y+"px";
+});
+
+document.getElementById("si").onclick=()=>{
+    document.body.innerHTML=`
+    <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:linear-gradient(135deg,#ffe4f1,#fff);font-family:Arial;text-align:center;padding:20px;">
+        <div>
+            <div style="font-size:120px;">💐🌸💖</div>
+            <h1 style="color:#e91e63;">¡Gracias, Sayi! 💕</h1>
+            <p style="font-size:22px;color:#555;max-width:600px;">
+                Feliz segundo día de tu mes. 🌷<br><br>
+                Gracias por ser una persona tan especial en mi vida.
+                Espero que nuestra amistad dure para siempre,
+                porque te quiero muchísimo y siempre podrás contar conmigo. 💗
+                <br><br>
+                <strong>Te amo mucho, Sayi. 💖✨</strong>
+            </p>
+        </div>
+    </div>`;
+};
+</script>
+
+</body>
+</html>
